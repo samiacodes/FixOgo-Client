@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import {
-  motion,
+  motion ,
   AnimatePresence,
   useScroll,
   useMotionValueEvent,
@@ -49,6 +49,7 @@ export const FloatingNav = ({ navItems, className }) => {
           className
         )}
       >
+        <span className="text-2xl font bold">FixOgo</span>
         {navItems.map((navItem, idx) => (
           <a
             key={`link=${idx}`}
