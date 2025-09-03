@@ -1,13 +1,14 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home/Home/Home";
+import About from "../pages/About/About";
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
     children: [
       { index: true, Component: Home },
-    //   { path: "settings", Component: Settings },
+      { path: "about", Component: About },
     ],
   },
 ]);
