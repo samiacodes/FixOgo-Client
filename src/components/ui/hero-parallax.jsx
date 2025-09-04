@@ -38,10 +38,11 @@ export const HeroParallax = ({ products }) => {
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
+
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -62,7 +63,7 @@ export const HeroParallax = ({ products }) => {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row mb-20 space-x-20">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -87,14 +88,15 @@ export const HeroParallax = ({ products }) => {
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> development studio
+    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
+      <h1 className="text-2xl md:text-7xl font-bold text-[#2392a9]">
+        FixOgo — <br /> Your Home Services Solution
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
+      <p className="max-w-2xl text-base md:text-xl mt-8 text-[#292b5a]">
+        We deliver fast and reliable home services—from groceries and repairs to
+        daily help like cleaning and beauty. Started to make everyday services
+        accessible for those who can't step outside, we bring trusted, skilled
+        help right to your doorstep.
       </p>
     </div>
   );
@@ -115,16 +117,20 @@ export const ProductCard = ({ product, translate }) => {
       <a href={product.link} className="block group-hover/product:shadow-2xl ">
         <img
           src={product.thumbnail}
-          height="600"
+          height="400"
           width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
+          className="object-cover absolute h-full w-full inset-0"
           alt={product.title}
+          loading="lazy"
         />
       </a>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
+      <div className="absolute inset-0 flex flex-col justify-center items-center opacity-0 group-hover/product:opacity-100 bg-[rgba(35,146,169,0.6)] p-4 text-center transition-opacity duration-300">
+        <h2 className="text-white font-bold text-lg">{product.title}</h2>
+        <p className="text-[rgba(247,176,25,0.9)] font-semibold mt-2 px-6">
+          {product.description}
+        </p>
+      </div>
     </motion.div>
   );
 };
