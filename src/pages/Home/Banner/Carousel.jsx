@@ -1,33 +1,49 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
 import { Carousel } from "../../../components/ui/carousel";
 
 
 export function CarouselDemo() {
+  const { t } = useTranslation();
   const slideData = [
     {
-      title: "Mystic Mountains",
-      button: "Explore Component",
-      src: "https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: `🛒 ${t("grocery")}`,
+      button: t("order_button"),
+      src: "/images/carousel/Grocery.webp",
+      link: "/service/grocery",
     },
     {
-      title: "Urban Dreams",
-      button: "Explore Component",
-      src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: `🛒 ${t("medicine")}`,
+      button: t("order_button"),
+      src: "/images/carousel/Medicine.webp",
+      link: "/service/grocery",
     },
     {
-      title: "Neon Nights",
-      button: "Explore Component",
-      src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: `🛒 ${t("repair")}`,
+      button: t("order_button"),
+      src: "/images/carousel/Repair.webp",
+      link: "/service/grocery",
     },
     {
-      title: "Desert Whispers",
-      button: "Explore Component",
-      src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: `🛒 ${t("cleaning")}`,
+      button: t("order_button"),
+      src: "/images/carousel/Cleaning.webp",
+      link: "/service/grocery",
+    },
+    {
+      title: `🛒 ${t("essential")}`,
+      button: t("order_button"),
+      src: "/images/carousel/Essential.webp",
+      link: "/service/grocery",
     },
   ];
   return (
     <div className="relative overflow-hidden w-full h-full py-20">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold text-gray-800">{t("title")}</h2>
+        <p className="text-gray-600 mt-2">{t("subtitle")}</p>
+      </div>
       <Carousel slides={slideData} />
     </div>
   );

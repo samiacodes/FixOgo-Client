@@ -1,9 +1,12 @@
+import { LanguageSelector } from "../../../components/LanguageSelector";
 import { BackgroundBeamsWithCollision } from "../../../components/ui/background-beams-with-collision";
 
 export function Banner() {
   return (
     <BackgroundBeamsWithCollision>
+      
       <div className="text-center text-[#292b5a] z-10 max-w-2xl">
+        <LanguageSelector/>
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#2392a9]">
           FixOgo
         </h1>
